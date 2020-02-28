@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="mt-lg-5 col-lg-4 col-xl-4 col-md-5 col-sm-12 mx-auto heading">
+            <h1 class="big-title text-center">LIST OF ALL USERS</h1>
+            <hr class="w-25 mx-auto">
+        </div>
+        <div class="text-center p-4">
+            <blockquote>
+                Load more data on scroll using ajax+php+mysql+bootstrap
+                and PopUp dynamic modal for each row of table
+            </blockquote>
+        </div>
+        <div>
+            <table class="table table-bordered  table-responsive w-100 d-block d-md-table">
+                <tr class="bg-dark text-white">
+                    <th>No.</th>
+                    <th>User name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Country</th>
+                    <th>Postal code</th>
+                    <th>IP address</th>
+                    <th>Action</th>
+                </tr>
+                <tbody id="load_data">
+                </tbody>
+            </table>
+        </div>
+        <div id="load_message" class="mb-5 p-5"></div>
+    </div>
+    <div class="modal fade" id="error_modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="bg-dark p-4 text-white">
+                        Full detail of the selected users
+                    </div>
+                    <table class="table table-bordered  table-responsive w-100 d-block d-md-table" id="all_data">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ajax call for fetching data -->
+<script type='text/javascript'>
+ $(document).ready(function() {
+   var limit = 6;
+   var start = 0;
+   var action = 'inactive';
+   function load_tickets(limit,start)
+   {
+     $.ajax({
+      url:"fetch_tickets.php",
+      method:"post",
+      data:{limit:limit, start:start},
+      cache:false,
+      success:function (data) {
+       $('#load_data').append(data);
+       if(data == '')
+       {
+        $('#load_message').html('<iframe src="https://giphy.com/embed/26Ff4PUGXu6OgoiWI" width="600" height="370" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>');
+        action = 'active';
+       }
+       else
+       {
+        $('#load_message').html('<button type="button" class="lbtn lbtn-accent-color">Please wait......</button>');
+        action = 'inactive';
+       }
+      }
+     });
+   }
+   if(action == 'inactive')
+   {
+    action = 'active';
+    load_tickets(limit,start);
+   }
+   $(window).scroll(function() {
+      if($(window).scrollTop() + $(window).height() > $('#load_data').height() && action == 'inactive')
+      {
+        action = 'active';
+        start = start+limit;
+        setTimeout(function() {
+          load_tickets(limit, start);
+        }, 2000);
+      }
+   });
+ });
+
+</script>
+<script type="text/javascript">
+  function get_full_details(detailid){
+         alert(detailid);
+         $.ajax({
+          url:"fetch_tickets.php",
+          method:"POST",
+          data:{detailid:detailid},
+          success:function (data) {
+            $('#error_modal').modal({
+                    backdrop:'static',
+                    keyboard:false,
+                  });
+            $('#all_data').html(data);
+          }
+         });
+     }
+</script>
+
+
+	<!--  js code link-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kodchasan&display=swap" rel="stylesheet">
+</body>
+</html>
