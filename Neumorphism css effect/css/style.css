@@ -1,0 +1,92 @@
+  *{
+  	margin: 0;
+  	padding: 0;
+  	font-family: 'Nunito',sans-serif;
+
+  }
+  #header{  
+  	background: #ffffff;
+  } 
+  .cardbox1{
+  	height: 450px;
+  	width: 450px;
+  	border-radius: 50px;
+  	background: #0000ff;
+  	box-shadow:  inset 4px 4px 9px #000dd9, 
+  	             inset -2px -2px 9px #0011ff;
+  }
+  .cardbox2{
+  	border-radius: 50px;
+  	max-height: 300px;
+  	max-width: 300px;
+	 font-size: 18px;
+	 border-radius: 40px;
+	 box-shadow: -4px -4px 8px rgba(255, 255, 255, 1),
+	             -4px -4px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 8px rgba(255, 255, 255, 0.1),
+                 2px 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  .cardbox2:hover{
+  	box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 1),
+  	            inset  -4px -4px 12px rgba(255, 255, 255, 0.5),
+  	             inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+  	            inset 2px 2px 8px rgba(0, 0, 0, 0.15);
+  	transform: scale(0.98);            
+  }
+
+nav{
+	background: #ffffff;
+	position: relative;
+	padding: 5px 8px!important;
+	margin-bottom: 0px!important;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 18px;
+	
+}
+.navbar-brand{
+	float: left;
+	margin-left: 30px;
+	font-size: 24px;
+	text-decoration: none;
+}
+.nav-list{
+	margin-top: 4px!important;
+	margin-bottom: 0px!important;
+    text-decoration: none;
+    display: flex;
+    list-style: none;
+    float: right;
+}
+.nav-item a{
+	position: relative;
+	display: inline-block;
+	padding: 8px 30px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #ffffff!important;
+	background-color: #0000ff;
+	font-size: 18px;
+	border-radius: 8px;
+	background: #ffffff;
+	box-shadow:  20px 20px 100px #c4c4c4, 
+	             inset -20px -20px 100px #0000ff;
+}
+.nav-item a:hover{
+	box-shadow:  inset 20px 20px 100px #0000ff, 
+	            inset -20px -20px 100px #0000ff;
+	text-decoration: none;           
+}
+
+#about-section,#feature-section{
+	margin-top: 80px;
+}
+#feature-section{
+	background-color: #f2f3f7;
+	padding: 50px;
+}
+

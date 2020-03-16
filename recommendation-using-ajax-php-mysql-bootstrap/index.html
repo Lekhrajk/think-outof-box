@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Auto hint</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<style type="text/css" media="screen">
+		ul{
+			display: block;
+			background-color: #3195ff;
+			color: #ffffff;
+			cursor: pointer;
+			padding: 12px;
+			max-width: 300px!important;
+			box-sizing: border-box;
+		}
+		li{
+			padding: 12px;
+			transition: .5s ease-in-out;
+		}
+		li:hover{
+			background-color: #ffffff;
+			color: #3195ff;
+			text-align: center;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<div class="col-8 mx-auto">
+				<h2 class="text-primary text-center">Recommendation using Ajax</h2>
+				<p class="text-info text-center h4">On keyup data relevant data willbe fetched using ajax from DB</p>
+				<input type="text" name="name" id="name" placeholder="enter item name" class="form-control" autocomplete="off">
+				<div id="searched_item"></div>
+			</div>
+		</div>	
+	</div>
+
+	<!-- ajax call for the seached item -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#name').keyup(function() {
+				var name = $(this).val();
+				if(name!='')
+			    {
+                   $.ajax({
+                   	url:"name.php",
+                   	method:"POST",
+                   	data:{name:name},
+                   	success:function(data) {
+                   		$('#searched_item').fadeIn();
+                   		$('#searched_item').html(data);
+                   	}
+                   });
+           	    }	
+           	    else{
+           	    	$('#searched_item').fadeOut();
+           	    	$('#searched_item').html("ajax not working");
+           	    }	
+			});
+		});
+	</script>
+</body>
+</html>
