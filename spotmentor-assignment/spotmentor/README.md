@@ -1,4 +1,6 @@
-# spotmentor
+# Spotmentor Assignment
+
+Please Check the live link as i have also hosted it on server it will help you to understand that how exaclty it looks and works http://lrajkashyap.dx.am/dist/
 
 ## Project setup
 ```
