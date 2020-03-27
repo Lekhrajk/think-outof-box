@@ -1,0 +1,38 @@
+{
+  "name": "Marshmello_landing",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {
+    "@mdi/font": "^3.7.95",
+    "aos": "^2.3.4",
+    "bootstrap": "^4.3.1",
+    "carousel-js": "^4.0.0",
+    "del": "2.2.2",
+    "gulp-sourcemaps": "^2.6.3",
+    "jq-nav-scroll-spy": "^1.3.3",
+    "jquery": "^3.4.1",
+    "jquery.easing": "^1.4.1",
+    "jquery.flipster": "^1.1.4",
+    "owl.carousel": "^2.3.4",
+    "popper.js": "1.14.7"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.16.0",
+    "compass-mixins": "^0.12.10",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "merge-stream": "^1.0.1",
+    "minimatch": "^3.0.4",
+    "node-sass": "^4.11.0",
+    "run-sequence": "^1.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bootstrapdash",
+  "url": "https://www.bootstrapdash.com/",
+  "copyright": "",
+  "license": ""
+}
