@@ -8,6 +8,7 @@ import jQuery from 'jquery';
 window.$ = window.jQuery = jQuery;
 import 'popper.js';
 Vue.config.productionTip = false
+
 new Vue({
   router,
   store,

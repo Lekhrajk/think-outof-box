@@ -1,6 +1,5 @@
 <template>
   <div class="layout">
-  	<!-- navbar starts -->
      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
         <div class="container-fluid">
             <span class="navbar-brand font-weight-bolder">PLATONIA ASSIGMENT</span>
@@ -18,19 +17,13 @@
                 </ul>
             </div>
         </div>
-    </nav>
-    <!-- navbar ends  -->
-
-    <!-- main content -->
+        </nav>
     <div id="layoutSidenav_content">
       <main>
         <div class="container-fluid">
           <router-view></router-view>
         </div>
       </main>
-      <!-- end of main content -->
-
-      <!-- footer -->
       <footer class="footer mt-auto footer-light">
         <div class="container-fluid">
           <div class="row">
@@ -43,10 +36,7 @@
           </div>
         </div>
       </footer>
-      <!-- end of footer -->
     </div>
-
-    <!-- Modal for creating todos -->
     <CreateModal/>
   </div>
 </template>
