@@ -12,6 +12,7 @@
                         <div class="row">
                             <div class="col-md-12 col-12 mx-auto">
                                 <div class="card shadow-lg border-0 p-4">
+                                    <!-- Create todo forms starts -->
                                     <form>
                                         <div class="form-row my-4">
                                             <div class="col">
@@ -64,6 +65,7 @@
                                             <button class="btn btn-dark" @click.prevent="createTodo" data-dismiss="modal">Add</button>
                                         </div>
                                     </form>
+                                    <!-- create todo form ends -->
                                 </div>
                             </div>
                         </div>

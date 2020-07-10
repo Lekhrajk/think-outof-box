@@ -1,5 +1,6 @@
 <template>
     <div class="list container">
+        <!-- top content -->
         <h1 class="text-center text-primary title mt-3">TODOS List-View</h1>
         <div class="clearfix">
             <div class="float-right btn-group">
@@ -17,6 +18,9 @@
                 </div>
             </div>
         </div>
+        <!-- end of top content -->
+
+        <!-- list of tasks -->
         <div class="table-responsive card border-0 shadow-lg">
             <table class="table">
                 <thead class="thead-light">
@@ -42,59 +46,58 @@
                 </tbody>
             </table>
         </div>
+        <!-- end of tasks -->
     </div>
 </template>
-
 <script>
-    export default {
-        name: "list",
-        computed: {
-            todos() {
-                return this.$store.state.Todos;
-            },
-            TodoCount() {
-                return this.$store.getters.TodoCount;
-            },
-            TrueLength() {
-                return this.$store.state.Todos.filter(todo => todo.completed === true);
-            },
-            FalseLength() {
-                return this.$store.state.Todos.filter(todo => todo.completed === false);
-            }
+export default {
+    name: "list",
+    computed: {
+        todos() {
+            return this.$store.state.Todos;
         },
-        mounted() {
-            this.$store.dispatch('getTodos');
+        TodoCount() {
+            return this.$store.getters.TodoCount;
         },
-    }
+        TrueLength() {
+            return this.$store.state.Todos.filter(todo => todo.completed === true);
+        },
+        FalseLength() {
+            return this.$store.state.Todos.filter(todo => todo.completed === false);
+        }
+    },
+    mounted() {
+        this.$store.dispatch('getTodos');
+    },
+}
 </script>
-
 <style scoped>
-    .view {
-        opacity: 0;
+.view {
+    opacity: 0;
+}
+
+.todo:hover .view {
+    opacity: 1;
+}
+
+@media (max-width:570px) {
+    .title {
+        font-size: 30px !important;
+        margin-top: 30px;
+        margin-bottom: 20px;
     }
 
-    .todo:hover .view {
-        opacity: 1;
+    .container {
+        margin: 0px !important;
     }
+}
 
-    @media (max-width:570px) {
-        .title {
-            font-size: 30px !important;
-            margin-top: 30px;
-            margin-bottom: 20px;
-        }
+.cardbox {
+    padding: 10px 15px;
+    display: inline-flex;
+}
 
-        .container {
-            margin: 0px !important;
-        }
-    }
-
-    .cardbox {
-        padding: 10px 15px;
-        display: inline-flex;
-    }
-
-    .total_count {
-        margin: 4px 5px;
-    }
+.total_count {
+    margin: 4px 5px;
+}
 </style>

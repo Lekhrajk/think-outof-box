@@ -1,106 +1,110 @@
 <template>
-  <div class="home">
-    <div class="container-fluid">
-      <h1 class="text-center text-primary title mt-3">TODOS Card-View</h1>
-      <div class="clearfix">
-        <div class="float-right btn-group">
-          <router-link :to="{ name: 'home' }" class="btn btn-dark">Card-view</router-link>
-          <router-link :to="{ name: 'list' }" class="btn btn-primary">List-view</router-link>
-        </div>
-        <div class="float-left">
-          <div class="cardbox shadow-lg">
-            <p class="total_count border-right" v-if="TodoCount">Total <span
-                class="badge badge-primary">{{ TodoCount }}</span></p>
-            <p class="total_count border-right" v-if="TrueLength">Completed <span class="badge badge-warning">
-                {{ TrueLength.length }}</span> </p>
-            <p class="total_count" v-if="FalseLength">InComplete <span
-                class="badge badge-danger">{{ FalseLength.length }}</span></p>
-          </div>
-        </div>
-      </div>
-      <div class="row" v-if="todos">
-        <div class="col-md-4 col-lg-3 col-12 mx-auto" v-for="todo in todos" :key="todo.id">
-          <div class="card border-0 shadow-lg pb-0 mt-5">
-            <router-link :to="{ path: '/todo/'+todo.id}">
-              <Card :title="todo.title" :id="todo.id" :userId="todo.userId" :completed="todo.completed" />
-            </router-link>
-          </div>
-        </div>
-      </div>
-      <div v-else class="text-center my-5">
-        <img src="@/assets/load.gif" class="img-fluid" alt="wait.." width="200">
-        <h3 class="text-center text-danger">Please wait...</h3>
-      </div>
-    </div>
-  </div>
-</template>
+    <div class="home">
+        <div class="container-fluid">
+            <h1 class="text-center text-primary title mt-3">TODOS Card-View</h1>
+            <div class="clearfix">
+              <!-- top content -->
+                <div class="float-right btn-group">
+                    <router-link :to="{ name: 'home' }" class="btn btn-dark">Card-view</router-link>
+                    <router-link :to="{ name: 'list' }" class="btn btn-primary">List-view</router-link>
+                </div>
+                <div class="float-left">
+                    <div class="cardbox shadow-lg">
+                        <p class="total_count border-right" v-if="TodoCount">Total <span class="badge badge-primary">{{ TodoCount }}</span></p>
+                        <p class="total_count border-right" v-if="TrueLength">Completed <span class="badge badge-warning">
+                                {{ TrueLength.length }}</span> </p>
+                        <p class="total_count" v-if="FalseLength">InComplete <span class="badge badge-danger">{{ FalseLength.length }}</span></p>
+                    </div>
+                </div>
+                <!-- end of top content -->
+            </div>
 
+            <!-- cards list -->
+            <div class="row" v-if="todos">
+                <div class="col-md-4 col-lg-3 col-12 mx-auto" v-for="todo in todos" :key="todo.id">
+                    <div class="card border-0 shadow-lg pb-0 mt-5">
+                        <router-link :to="{ path: '/todo/'+todo.id}">
+                            <Card :title="todo.title" :id="todo.id" :userId="todo.userId" :completed="todo.completed" />
+                        </router-link>
+                    </div>
+                </div>
+            </div>
+            <!-- end of cards list -->
+
+            <!-- else -->
+            <div v-else class="text-center my-5">
+                <img src="@/assets/load.gif" class="img-fluid" alt="wait.." width="200">
+                <h3 class="text-center text-danger">Please wait...</h3>
+            </div>
+        </div>
+    </div>
+</template>
 <script>
-  import Card from './Card';
-  export default {
+import Card from './Card';
+export default {
     name: 'Home',
     computed: {
-      todos() {
-        return this.$store.state.Todos;
-      },
-      TodoCount() {
-        return this.$store.getters.TodoCount;
-      },
-      TrueLength() {
-        return this.$store.state.Todos.filter(todo => todo.completed === true);
-      },
-      FalseLength() {
-        return this.$store.state.Todos.filter(todo => todo.completed === false);
-      }
+        todos() {
+            return this.$store.state.Todos;
+        },
+        TodoCount() {
+            return this.$store.getters.TodoCount;
+        },
+        TrueLength() {
+            return this.$store.state.Todos.filter(todo => todo.completed === true);
+        },
+        FalseLength() {
+            return this.$store.state.Todos.filter(todo => todo.completed === false);
+        }
     },
     mounted() {
-      this.$store.dispatch('getTodos');
-      
+        this.$store.dispatch('getTodos');
+
     },
     components: {
-      Card
+        Card
     },
-  }
+}
 </script>
 <style scoped>
-  .card {
+.card {
     border-bottom: 3px solid transparent !important;
     min-height: 200px;
-  }
+}
 
-  .card:hover {
+.card:hover {
     border-bottom: 3px solid #0000ff !important;
     cursor: pointer;
-  }
+}
 
-  a {
+a {
     text-decoration: none !important;
     color: #000;
-  }
+}
 
-  a:hover {
+a:hover {
     text-decoration: none !important;
     color: #000;
-  }
+}
 
-  .btn {
+.btn {
     color: #fff !important;
-  }
+}
 
-  @media (max-width:570px) {
+@media (max-width:570px) {
     .title {
-      font-size: 30px !important;
-      margin-top: 30px;
-      margin-bottom: 20px;
+        font-size: 30px !important;
+        margin-top: 30px;
+        margin-bottom: 20px;
     }
-  }
+}
 
-  .cardbox {
+.cardbox {
     padding: 10px 15px;
     display: inline-flex;
-  }
+}
 
-  .total_count {
+.total_count {
     margin: 4px 5px;
-  }
+}
 </style>

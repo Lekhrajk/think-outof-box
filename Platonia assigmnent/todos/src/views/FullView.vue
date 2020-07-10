@@ -47,6 +47,8 @@
                             </div>
                         </div>
                         <div class="table-responsive card border-0 shadow-lg">
+
+                            <!-- for showing how many task completed/remaining for the selected user -->
                             <table class="table">
                                 <thead class="thead-light">
                                     <tr v-if="UserTask">
@@ -63,12 +65,17 @@
                                     </tr>
                                 </thead>
                             </table>
+                            <!-- end of table -->
+
+                            <!-- toggler for tasks -->
                             <button class="btn btn-danger btn-block" @click="ShowData">{{ text }} <i :class="[!isActive ? 'fa-eye' : 'fa-eye-slash', 'fa','ml-3']"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- tasks of selected user -->
         <div class="row" v-if="show">
             <div class="col-md-4 col-lg-3 col-12 mx-auto" v-for="task in UserTask" :key="task.id">
                 <div class="card border-0 shadow-lg pb-0 mt-5">
@@ -76,10 +83,8 @@
                 </div>
             </div>
         </div>
-        <!-- <div v-else class="text-center my-5">
-                <img src="@/assets/load.gif" class="img-fluid" alt="wait.." width="200">
-                <h3 class="text-center text-danger">Please wait...</h3>
-        </div> -->
+        <!-- end of task -->
+
     </div>
 </template>
 
