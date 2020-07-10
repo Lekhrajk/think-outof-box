@@ -55,6 +55,7 @@
     },
     mounted() {
       this.$store.dispatch('getTodos');
+      
     },
     components: {
       Card
