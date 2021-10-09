@@ -1,0 +1,328 @@
+/* -------------------- universal style  ---------------- */
+*{
+  padding:0px;
+  margin: 0px;
+}
+*, body {
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+} 
+hr{
+  height: 2px!important;
+  background-color: #298A7F!important;
+}
+html {
+scroll-behavior: smooth;
+}
+.big-title{
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 44px;
+  margin-bottom: 5px!important;
+  margin-top: 5px!important;
+}
+
+.card:hover{
+  border-color: #263CF0!important;
+}
+/* ----- universal style ends here ---------- */
+.brand{
+  font-size: 20px;
+  font-family: 'Kodchasan', sans-serif;
+}
+.brand:hover{
+  color: #E1EF25!important; 
+}
+#hyperlinks{
+font-family: 'Lemonada', cursive;
+transition: 0.3s ease-in-out;
+margin-left: 5px!important;
+margin-right: 5px!important;
+}
+#hyperlinks:hover {
+-webkit-box-shadow: 0 9px 18px rgba(0, 0, 0, 0.8);
+box-shadow: 0 9px 18px rgba(0, 0, 0, 0.8);  
+color: #007bff !important;
+display: block !important;
+background-color: #ffffff !important;
+border-radius: 4px;
+}
+.navbar-toggler{
+  border: none!important;
+}
+.navbar-toggler:focus.active{
+  border: none!important;
+}
+.carousel-inner img {
+width: 100%;
+height: 100%;
+}
+.slide{
+  margin-top: 50px!important;
+}
+.about{
+font-family: 'Lato', sans-serif;
+font-family: 'Merriweather', serif;
+font-size: 20px;
+color: #1F0B63;
+}
+.result:hover{
+  color: #F05526 !important;
+  font-weight: 400;
+}
+#register{
+  position: relative;
+  z-index: 1000;
+  top: 142px;
+  left: 180px;
+  color: #263CF0;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif!important;
+}
+.how-bg-sec {
+background-color: #F0786F;
+margin-top:0px!important;
+}
+.level {
+min-width: 250px;
+max-height: 150px;
+padding: 15px 5px;
+margin-top: 60px;
+margin-bottom: 60px;
+background-color: #F2F3F4;
+}
+.level:hover{
+background-color: #F0786F;
+color: #ffffff!important; 
+}
+.levelmain {
+margin-top: 5%;
+}
+.like {
+font-family: 'PT Sans Narrow', sans-serif!important;
+color: #007bff;
+font-size: 30px;
+}
+.like:hover{
+  color: #ffffff!important;
+}
+.lvl {
+cursor: pointer;
+font-weight: bold;
+transition: 0.3s;
+text-decoration: none;
+}
+.lvl:hover{
+background-color: #007bff!important;
+text-decoration: none;
+color: #ffffff!important;
+}
+.diag{
+  height: 50%!important;
+}
+.bbbb {
+background-color: #007bff;
+}
+.facility{
+  font-size: 35px;
+  font-family: 'Kodchasan', sans-serif;
+}
+.universities{
+-webkit-box-shadow: 0 9px 18px rgba(0, 0, 0, 0.4);
+box-shadow: 0 9px 18px rgba(0, 0, 0, 0.4);  
+color: #007bff !important;
+display: block !important;
+background-color:  #ffffff!important;
+margin-top: 15px!important;
+margin-bottom: 5px;
+}
+.topinstitutecard{
+  background-color:#F0786F; 
+}
+.card-img-top{
+  width: 100%;
+  height: 180px;
+}
+.ceocard{
+border: none!important;
+-webkit-box-shadow: 0 9px 18px rgba(0, 0, 0, 0.4);
+box-shadow: 0 9px 18px rgba(0, 0, 0, 0.4); 
+}
+.ceopic{
+  width: 70%!important;
+  border-radius: 50%;
+  height: 240px!important;
+}
+.back1 {
+background-image: url("images/parallaxEffect/back5.jpg");
+min-height: 500px;
+/* Create the parallax scrolling effect */
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.back2
+{
+background-image: url("images/parallaxEffect/back2.png");
+min-height: 500px;
+/* Create the parallax scrolling effect */
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.back3 {
+background-image: url("images/parallaxEffect/back3.jpg");
+min-height: 400px;
+/* Create the parallax scrolling effect */
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.back4 {
+background-image: url("images/parallaxEffect/back4.jpg");
+min-height: 500px;
+/* Create the parallax scrolling effect */
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.back5 {
+background-image: url("images/parallaxEffect/back5.jpg");
+min-height: 500px;
+/* Create the parallax scrolling effect */
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+#schedule {
+  padding: 60px 0 60px 0;
+}
+#schedule .sub-heading {
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  margin: 0 auto 30px auto;
+}
+#schedule .schedule-item {
+  border-bottom: 1px solid #cad4f6;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  transition: background-color ease-in-out 0.3s;
+}
+
+#schedule .schedule-item:hover {
+  background-color: #fff;
+}
+/* sidebar */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #F2F3F4;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlayright {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #F2F3F4;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 5%;
+    width: 100%;
+    margin-top: 30px;
+}
+.contactus{
+  border: none!important;
+  padding: 10px;
+-webkit-box-shadow: 0 9px 18px rgba(0, 0, 0, 0.4);
+box-shadow: 0 9px 18px rgba(0, 0, 0, 0.4); 
+ border-radius: 4px;
+}
+
+.overlay .closebtn {
+    float: right!important;
+    top: 50px;
+}
+#load {
+width: 100%;
+height: 100%;
+position: fixed;
+z-index: 9999;
+background: url('http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif?e44397') 50% 50% no-repeat rgb(249, 249, 249);
+}
+/* reponsive style */
+@media (max-width:700px) {
+    .brand{
+       font-size: 26px!important;
+    }
+    .slide{
+      margin-top: 67px!important;
+    }
+    .carousel-item{
+      height: 300px!important;
+    }
+    .diag {
+    max-width: 300px;
+    }
+    .level {
+    margin-left: 0px;
+    text-align: center;
+    max-width: 300px;
+    max-height: 150px;
+    padding: 20px;
+    margin-top: 5px !important;
+    margin-bottom: 5px!important;
+    }
+    .levelmain {
+    margin-top: 2%;
+    }
+    hr{
+      width: 50%!important;
+    }
+    #register{
+    position: relative;
+    z-index: 1000;
+    top: 200px!important;
+    left: 0px!important;
+    font-size: 18px;
+    }
+    .back1,.back2,.back3,.back4,.back5{
+      min-height: 200px!important;
+    }
+    .how-bg-sec{
+      margin-top: 200px!important;
+    }
+    .levelmain {
+     margin-top: 3%!important;
+    }
+    .overlay .closebtn {
+    margin-top: 60px!important;
+    }
+    .instituteimage{
+      width: 400px!important;
+    }
+}
+@media only screen and (max-device-width: 1024px) {
+    .back1,.back2,.back3,.back4,.back5 {
+        background-attachment: scroll;
+    }
+}
