@@ -7,7 +7,10 @@ Please Follow the following steps
 
 ## Step4: 
 
+      Open index.html file browser  
       Done
+      
+ # All the information data inside may/maynot be real please consider it as dummy content i am noway related to any of the person/company/firm/organization mentioned inside it       
 
 Note : I wrote this code when i was applying for different different internship during my 2nd year of engineering just sharing if it help any new learner
 This includes boostrap4,css3,javascript,jquery,html5 and some validation files
