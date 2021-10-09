@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./build/css/main.css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Fira+Sans|Fugaz+One|Kaushan+Script|Lemonada|Lobster+Two&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="build/css/intlTelInput.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-sm  navbar-dark">
+    <a class="navbar-brand" href="#">
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZoAAAB7CAMAAAB6t7bCAAAAw1BMVEX///8AAAAvvm7o6Oj6+vrz8/MhvGgpvWvZ2dk8PDzr6+v8/PwYu2XF69WPj4/y/Pafn580v3Ge3rne9Ojk9uzY8uPOzs7U1NRy0JjExMQsLCxtbW2Z2bG+vr7M7trw8PCsrKxaWloQEBCbm5tLS0uwsLB7e3ukpKQlJSVUVFRAQEAyMjJnzJCR2q+BgYFqamoZGRlMxoCB1aSt48O658xbyIfh5+SH16hQx4N50Zy05snR4tfH4dCn4b+128Of17as2L2dZS8pAAAVeklEQVR4nO2d+WOiOBTHPcEqluJVbT17H9hWK6N2pjv7//9VS0gI7+XgsNRuZ/z+sjtAkeRDXl5eXkKhcNC3VGdhOe78rdm2v/pJDsJ6M82SaRqWYRiOt3xvdg+E/h9qLK1SJNPnY5jOZttajTtf/Wh/uboLoyQraEQlZ+HOV+ODmfsavfrGTC9OaP067h4a0T5lb60YMIiQZToLb9lqdjuHRvSZqtSJJmNgzEzDjG1AlJDfiHxC2+G/v34eCH2GKmWi+m/AwvSGW3dhWr6blkwoMHMLrz9/7R46olwVkKn/6ENjZgx9X83udFfDpbtwUhPyzZzXX7+P24eOKA9RMr+wZ2atogvsTrvZWrobhzSiJDNnBmbO8r6uPH+OKJmhgWvc6EoXNuz2+HXd9xalZEJG/wtK8qepSshgY0bk6C2S3e6u5ltv4Rh6M0fs4UEfEyXjiMNMc5HYnfsdkW/mfELUzOG/h/bwoJ0UkCk3pdGMmb6v6HR9M+e7CiUDEFLYw4Myqcq8Zik2Y26z3srviFbzvk8oyR4elEaUTLk+l9AY8x1vOTZS2sOD4jQpMzRbZoeC0X1glHbuK1aBbTQ3uT7oX6eQTPmHF6Cxxna36XcbDhmX7NpX0AZoCr5z/epIpavZ+dPx7aDy4aL8YeJkfAeNouH9Q2e82tUg9U2VPSy/FON0d9z7QEH+OEVkyj9oV2PlcdsNpfyGj9bvYtH4urjO49f/CAEy5V/Ud3ZyuK29oGgEe5iMxm86h5ZDBcjUX2n/4OZw2w5zntv4cBo0xeJ5I4cn+P6CaGjXbaxzuG1X7TunQ1O8qubwCN9eEM1W2T/spKbad06Jpnh1cNY4miqRS9E0c7htS+k7p0ZTnOXwDN9dDA35X9Z15xL22qptY/0sJZribQ4P8c3F0JCOt0NjAUbaoUy729H212zw+iocTo/mpb5zkf4UATRtFndO+Zdr03QWLknqVOTSMN95LByeQDSjSZ2rd3wlsDn+aMm+vQCabGGvoKPnuTT9+Vu3HbUh5jubgu+M0eDxS6OG4Tz89Z4AQEO7bmOZ7g+HIErNMjU83kt1TfWUQAwaH845YlP7ULn+AAE0S4rmPd0fvstJhAZvcKHvLPZFCM2peMvGI0Tz/4/YNMq10e3l7ahWFk6Ur4/Pn5+fz48H4hlR9dro5PLp+Hgq3QOhYb5zymkA25Gnm82wlbxa6rjC5DG2WYwgmhv171bqp35pLi9PTsvxJm9Smz7dnPu68Qs+UZwHQzp8pyo4Ew5+6+dcz6PgSBl0j7NpNEhuDJ5BKZ4H+icsn8wuoivvTwQ6EZqsvrPdklM2Qn9grbGNCWgKEI1qaFPp3TyA7ujpVOciNgbnaAj1cj4SIww3Wtt6Cc6M2LEyOHZJ/g3/nPxAiOD0Hp8ozhSvBVFvVhT1hNzSCE3YdWeZMiYpG+9LlhBgWHwKgDZA2TYmoYG9zb10tnryKBbmSv1Sjh7EC4vFuxMM51iL5jYBzXmhMACvOxMdiV1Kx4t3ql6z/Cxf6AOGVhygyeY7I9nd8dt6GUV4HE1coQrrVmGHT2CtiyevlZM95/JLWVcW268jxDEjGsDiCl3BdVLATZHrQi7pSHUd0VNkByI0rOteyBWWWTZtgIboOyeigUUW0FTPxVIwnYn3qemjQXCwpEczBWdUaM6UZIhf86Q+IRkAzQ2InjmbCI0m7KXTynPn70219dP5zhiNYrwPHxn3NVWFiYqqBKqsvxD5Fruj0enhWndmhO6Pflr/iBEa5junTLd8s2hOs+W4y/fVGMcDWDrNRooSIDSK7hFaaoSmfhRTGGQwqvER1Cdl/eSDRi9sAbTWjCoMH0ZosvnOXuiVMULmZhtFZVYa3xmjUUzKwIAAcp7jyBSLR8D51fQzXJwCfA2wMwFf/rBf/hga5PLENmuisoDGprP5hhj2UquxEXOcTSPq9ee6uEIVVrECDXzAKTiu7F2Boj7kFJ+4v7kRvLqjHdHEJ5wk6QncXnjNzp5vbnCMaiag0YW9NBrKwYColTDfuRWPRh4xIs8TvGgDXJiX+xux5+EmDTaae9ZCRuiND5sN9Aazo7kNfrGm6DUugwev4bcJOAJTdOKY1kIFXU47T46mTWNiTtp5+bVpCQuhovzohW5ODqGRztbg40Ejhar2hmKoIY+Nd0zgWPSmov4nNJR6NLAvUKMBbpTQtT2rS/MSdYfo8ugwJEYfkaMZZ/ad7e7qfek5lsVWCFi8lVBUltwAK3FosC0CJgBWInB2UG9alu5xBtjCZnfHjkFvMCMa6KHgFn0OzqAWxW3AtfKoL+B4XwS2nqN53zmdptN8HfYXhsW7FjYnV5I96xg0VWEcDbwueHgK/gSW8oQeArX6DK4swA6HIfsAGmiKK7DZnMH+cwKfm/8CfBI0lVt9Ea7maFjYa9f080IjsoT6VHSEplwL1RvczgQPCDQa+F6i+i7AeBo9AmoVeXiwn2XjKWhBktHArAb8ENCw4mnzC8UZ6J494t4WdDdB6Tmafn7pNFrfuVCJGTgivYBBDyw7DkeBOryYiEfQWKI3jcRurUcD34VkNPrxEQx0hq/aVHFM/tlH8m+OxsviO8eLzckpluakRgOHz+CwEI2GPW1PLF7ShA80h3i0Dm8yZccgGvwUejTQWww7IYhLmLDqRWcuyL/DjBo2JWDCKYHmfLhq29lTKVkquiKukBYNjHWBJw57lFATYJ4pCDScO45N/cgLjX58BB3isKWBQ2dCOAS+aMQ6hGjaLOwF+ocWifObzsbdtlaZtmhYaOMKjXRoEAHYXYvhddCnMuuAxnMvNz09HdijYDTwZZiyYx9Fw1pNHRy6qp0iweEXaX4hmq7kO9s0ss/W/5cW3na+aqfaiIZSVi3NSYXmEZsF0NW8DGpIZYCG1ZcYYTybHffU06FfgiYhfIYeKETzZuFRYyFsR3xAGaRmkOSZZasZi8img1fVnFwaNMdCACc+fMb1GHP5w7likj4jGpDVgGP8qjlRKjhFwNDgUIBeEI0c9mK9jxiNoY3I2ZBtTjq2ipAmFT0dmplUhykLE6I51Zy/nwqmXY8G3iJEM9GiOdHeB6JhrnzMRA0SRNOXp4ybjqHfTYNloHn9td+GbOQrrCgaT+E/JKM5kv4mZWHOwusHuivuLlF7TIcmHI9ANDjEnwmNYn5aqWuAxlOEvezueO5uYnfToG2IbM35yhsJiysol7UnGzTJ5U1ZmAv+Bz3tjM0Z7AsyogHdGkajmq6mgm717mhUvnMIKNhNwyW7acS1IYu3kmVMXAGOymckZ4noBPYPF+KfpCwM+DtdbkCRJsMkooFebDY0+L3KBU29TacE4nZgIIRIehPaTQOItzhNKrqEJopqIBskjF12QKNMJGKKRuC7o3nYAc3TzmjCrhve2VZuHmx3xqth329DIiEe42H/VOazQTSAAcrdElzdlIURoqW1J83cF6cwUB2kfwvOJKOBThdGAzkwNJDj47FeJFDA0Kwk37nwavmjGXf+vlJv7+wTmrsO3QaauhBsDqBBJ9ksZQPUoEHNRlgjgCr25QzqfgYk/VbvRNWzXVQVv4mrVIWmmg8a2FSlbC5BDM1QSqehU2ts4n/RH76NdYRaS8/3FPhsDVsL4igv16DBzQZ7uWCMfKFJhNTrdHQjTuqHP5sRDegPsRcJ0UzRGQUaNL+WkBDN0Mhhrze0ATcZblrGZjt8bXZVQTVg/Fg+m8p31qOBozwhInuVvjCaImIDH06lpUMTPiRE84iuhvGHKToD3erQFMAnEXtV8bkDTTwp7LVSbCdMCfmIlr6Z092RxRXUW0Lp0OBmgwgoOtPMelLcHaLB8yx5oYEdS4gGVsBZfD49RfNjIU0JBCsBlJ5yaOZK7vpV0RHN4+bktGhQs4HTuKjodwmr1ms9LtzAYDhrIP8i7t52R4MRq9CgcIBi5d1T5JFQND8VOzDYr3O3JKZmSIT8swt3DjsiXSp6IC2awgw+M5zJqMATimZTA9FQcHuEF6WRscLDgSX2IeDMggrNGbo6G5oqLI08vj4G0XXa1fyiA0457GV3m+/zhH2e6fbOvME56mWcUt0JaFCzQVWFbJ2QohqktERTBaBxCP7Pg3QLSOsFXQvNH0cDbnCHroZOlx4NH+vi4TBmU50VQfINRfNP0jJOe/w+7y8sfSOKsMb5zqiahV5wBh8ZzgvgQLqwamPgD1/u+KTMreYWhSoIgYV04Qq5qe73woespEKDi6REg3w0v3FHhrd6S1+WR2a1db6zSo1GZ/zWWrsLwwoHM0DMGHbifOc4NChkfAX9O+z+glhLYUJfcL4kF3btj7BfgvUXNjKUMslBNnDWX+5oCuKKh+fr01q1djo652NkVniKZqvcvUynht0OBjOwDZkhi7FmGSdVDJrCDD4wNFzC/NPjLa3c+ulNWJrQADbgdUfRC4lWKoUHUXpb8alXnpRrvSchNqpCg80ffLpLdGaquI/fOBTZ08o8Q4pGEfZqk23n4+Y0G7bdXfltaBNsZ89HnMx31jTAODSo2aC16eIavOLRw+z+QZWSiRe4nA9qk2q11kMvKk+CEkxL8eJOEdtJRgNbaho0uFdVK+iCKBp5B4Zuya9u+umGcfy0s22Tjoj/6TB2e6g4NIUZfLopODFJzgVnlTIRX8m7R3GRYeQ0pJkN52iA+cPB8XRobjXHlboP3kvoO8NUdLrJTPjpBrKrxjhdco1iTg4oFg16jVEiZPKLNkp7JcgcTDNR/xlokuY6H2jRge+Mum4P9fLBjJnpeO52/pbwDSFtKnqgWDSFGXxAVEzt1CXTNG19P4DXqyFuvqLQpepa9ND6oas+uhb7kDPgodX/MSTfWbFII8wLMGOTa4w43zkBDWo2dyhPSbHkGAgOD2IpPqCb1tQ3fZ5F//85aAqnemN6HL48AZrfciq67Sq+EAAQkfQndxm0IYTIpkhNTcuKR1OYoWdEp2r6wgi7dcYU+1kI9PRUbGYV4Ex8BI1qnU6oyqX6tbiPyhKgWapWkXVXczKnqf8QSriYc+Ouo8SAMJ9N0y0loEHNRljTXdEsLy6ei2mAuitf5E3WTuXcqJsKjKgmo4GOZXo0ZLcOOYdhBgfUwHdWdd12e/w279NdNeICNaUwEK1PRQ+UgKYwQ5UknKw9K960mbTVDSnVjezTnSnzbCuXuIJm5K0Fswi8x4NPjp/qjm8l/ojdgNEZP3MmBZh8VQfnR7xEF4+za/wuanxnQcE3HNyFI087M/FPCL3Hb62ahAaPNaRtKsrTK1jnF1eXuhmc+vUM1PnL0Y127/XK4IZV0N3VMf3FwbOwHw35aZA1qrnTLir3BkRipDw4RaYE2A4MibvTNOiHUAghIVDDp66ZbZSXcbKfAwVUpiOjxFnVFEC1N7ok2yY9H49iEprpj/UGI6LBadIOuPXg5/5nexgTNL9o9ab/oAmJR283TilqQ7yZyHNyB+0o4Dtn/qCJT8jviBbEG+B/SxugYhnnQVlF0PxrIJuUWfY4GmCyKYG/fnfGHETQrLWryDKLptOYqZe4H6QXQaPdgSG7mvG+80EZBHxn2HU3muOdvnL2nmlr1YPiFPnOMBOWpNMYxsKdr5rq3E2d5vG+80EZRKYE2NgENJO1EQ7z/eGLsyH7bKe7nZvfEve/XsR3ltNp8IK0IKkpnWut/qLQQbtI7Tu70lcgS1aqz9ow3/nwycccxL8ohDJh2yUpVJZq2BOm0xx85xwUpaKjdBr7db4N8v95ykyqYU9TXgty0K6KfGdpFRlJmXkbLsOUmTT9B90VPZfB60E+mpLkO2PZdqfZmqeKig0zba16UKx835nl+OXxIe0ct4c6iKeiazJhs2mTNCd3UHpFvnMOXlXD/Hrf2Y70zf3EtKnoqcTSaYwcbrXzIzjc3V94a9587eFwDl8Ye9XaUrP75rkuteVjz/Wk9u6fpVq2lCslP1E8FT2PD6Vm31o1d5H9qMxQhuUyHh3//6Ej07XCLO2WZbKs1aZlypmNFr+XYS2UWyF8msr1TWwmbCbFp6LvRaTVOIFKpm8ODNaFdhw889o1whgs2fIwRKNIOiUlCtIgTB+S5eXhK6VV6DuXHG+rW4CeWv8D39lHYzWDnqbTbflVatCpow+gMd1xt93ptN88wzTS5098XOUf/OMAfIuAV80HNhJF02nUW6DsSQQN7zBIviIl8hE03AiMHXOfxrr+S4hksgXoDvkESjtjx6faHmrPQmjI9JERvCi5oPHvYu5xlpCl00hiWbMlb6nbCUVWg62w3adBFoXR+LVN/Zt80BA/Z38THiwVXStKyFr0W6vEKekKmxLYy4NrhNH4VUlf85zQFPrm/gKE9W3cunOFmXvTmzmWiu7s69lVwmh8l5ESyAsNueYTnlqp8o+f//xeuwv+0YZkQkawaaAiaSAhFX0vwmgWJjNAeaHxB9V7C0ORjBpf4UcbYvduQGaOJD1vtsjMtT74WYI8BNHYfSPMk88LTcEx9xa8ZRs8VkN1mr/JJFpqQpZRcnx/e0VWS7NUw6/0nQkac9nyNdy6/pjTYovkc0PjmXsbtpVFkTZU/vHj179DNs2p228TmzlCiCVNfaXvHEQDgjZNlzKE1Zgnmn25zxIaidCSblGTghD9z9emogdoWNDLfyCXubq5odmauUQb00iHBhP6+Q8hlM7M6T2YBlXlU8R+gxg0Gi1er13ygUraM+SGxo3QfEoxaBWlQQMQBYR+r/ubuH2fieLehAYXfRLWw02o6qFSPhVUg6OJXKixk7eHRgwac3Mq2Z+Rl4+Vl5UeMInApEYD7v3jZ0DI882coTBzOaTTNASAGn4YoAoNGWlRXz43NAszdHMqUs3Aao+v9VTKjp49iU/oV0BIWCO9t15S4MeOYjQk0TeYc80LTcPiafuND9R6KlU/qk67uxpuPb69vZXHxM/uEtD4FR9UZV5oSBDtK0OEu4hvb//FyzgFNK8Gze8haOCDdY0w7ycbmrXxpXO4H5FP6GvznQU0Q9ZqbL+PgM15bIQYMqHpGF87G/WtJaDZhC6aZ6LY3twI836yoGn4d/nS4O23ljRfw/J7fAJgq2Tb4FHYDGhs1zikP+4uhKbp8M8f22TyOOzAbc/kV2E0UlQ5QmO/Oj6Zw1LInUWiAdthoPmCtJlwJ7E3v5KdITFu7XcyEg3XNCI04Z9SEYvnH1sEN3MNklKzryDNnygQ3jTMEvgwdeHdIv9m81LRp8QRGv6nRIGXzI+ZJdNyDpuIfEA2rX0qcw0n8rteMDYmcfJFdHzoX0f/1bQEBWgieYdu5kNqNLm60tiw/bZ1F4vtOxx8dvwrqa9mNwWRw+H/j/ceT/8P7oX+TVlWFYEAAAAASUVORK5CYII="
+        width="100" height="50" class="img-fluid logo">
+    </a>
+  </nav>
+
+  <!-- main container -->
+  <div class="container">
+
+    <!-- top-header -->
+    <h2 class="text-center font-weight-bold mt-3">BUILD A COMPELLING RESUME</h2>
+    <div class="d-flex justify-content-between align-items-center bg-dark py-2 px-3">
+      <a class="text-white" href="#">
+        <span id="title">MyResume
+          <img src="./build/img/pen.png" width="25" height="25" class="img-fluid">
+        </span>
+      </a>
+      <div id="title1" class="row">
+        <div class="col-7 col">
+          <input type="text" name="name" class="form-control" />
+        </div>
+        <div class="col">
+          <span class="text-white btn btn-dark" id="save">Save</span>
+        </div>
+      </div>
+      <button class="btn btn-light pnd">
+        <img src="./build/img/eye-open.png" width="25" height="25" class="img-fluid pr-2">Preview & Download
+      </button>
+    </div>
+
+
+    <!-- side tabbar -->
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'PERSONAL')" id="defaultOpen"><img src="./build/img/pic1.png"
+          35height="20" width="35" class="img-fluid sidebar-icon"> PERSONAL INFO</button>
+      <button class="tablinks" onclick="openCity(event, 'SUMMARY')"><img src="./build/img/information.png" height="35"
+          width="35" class="img-fluid sidebar-icon">
+        SUMMARY</button>
+      <button class="tablinks" onclick="openCity(event, 'WORK')"><img src="./build/img/portfolio.png" height="35"
+          width="35" class="img-fluid sidebar-icon"> WORK
+        EXPERIENCE</button>
+      <button class="tablinks" onclick="openCity(event, 'EDUCATION')"><img src="./build/img/mortarboard.png" height="35"
+          width="35" class="img-fluid sidebar-icon">
+        EDUCATION</button>
+      <button class="tablinks" onclick="openCity(event, 'SKILLS')"><img src="./build/img/skills.png" height="35"
+          width="35" class="img-fluid sidebar-icon">
+        SKILLS</button>
+      <button class="tablinks">OPTIONAL SELECTIONS</button>
+      <button class="tablinks" onclick="openCity(event, 'CERTIFICATIONS')"><img src="./build/img/file.png" height="35"
+          width="35" class="img-fluid sidebar-icon">
+        CERTIFICATIONS</button>
+      <button class="tablinks" onclick="openCity(event, 'HONORS')"><img src="./build/img/trophy.png" height="35"
+          width="35" class="img-fluid sidebar-icon"> HONORS
+        & REWARDS</button>
+      <button class="tablinks" onclick="openCity(event, 'PROJECTS')"><img src="./build/img/hologram.png" height="35"
+          width="35" class="img-fluid sidebar-icon">
+        RESEARCHES / PROJECTS</button>
+      <button class="tablinks" onclick="openCity(event, 'TRAININGS')"><img src="./build/img/training.png" height="35"
+          width="35" class="img-fluid sidebar-icon">
+        TRAININGS</button>
+      <button class="tablinks" onclick="openCity(event, 'REFERENCES')"><img src="./build/img/group.png" height="35"
+          width="35" class="img-fluid sidebar-icon">
+        REFERENCES</button>
+      <button class="tablinks" onclick="openCity(event, 'ADDITIONAL')"><img src="./build/img/add-new-user.png"
+          35height="20" width="35" class="img-fluid sidebar-icon"> ADDITIONAL INFO</button>
+
+    </div>
+    <!-- first tabe personal informatio -->
+    <div id="PERSONAL" class="tabcontent">
+      <p class="form-control-plaintext"><span><kbd class="bg-warning text-white">TIPS</kbd></span> Check your spellings,
+        use your initials carefully, if any. A mistake in your name isn’t appreciated on a resume.</p>
+      <h3 class="text-center text-secondary">CONTACT DETAILS</h3>
+      <hr class="hr-style">
+      <!-- form starts here -->
+      <form name="myform">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+              <label for="firstname">First name<span class="text-warning">*</span></label>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+              <input type="text" name="name" placeholder="enter your firstname" id="fname" class=" form-control"
+                required>
+              <h4 id="err1" class="error"></h4>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+              <label for="lasttname">Last name<span class="text-warning">*</span></label>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+              <input type="text" id="lname" name="name" placeholder="enter your lastname" class=" form-control"
+                required>
+              <h4 id="err2" class="error"></h4>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+              <label for="email">Email<span class="text-warning">*</span></label>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+              <input type="email" id="email" name="email" placeholder="enter your email-id" class=" form-control">
+              <h4 id="err3" class="error"></h4>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+              <label for="phone">Mobile<span class="text-warning">*</span></label>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+              <input type="tel" name="mobile" id="phone" placeholder="eg 86666 65485" id="phone" class=" form-control">
+              <h4 id="err4" class="error"></h4>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+              <label for="Sphone">Alternate-mobile</label>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+              <input type="tel" name="smobile" id="phone" placeholder="eg 87776 65485" id="sphone"
+                class=" form-control">
+              <h4 id="err5" class="error"></h4>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+              <label for="skype">Skype username</label>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+              <input type="text" id="skype" name="skype" placeholder="your skypeid" class="form-control">
+              <h4 id="err6" class="error"></h4>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+              <label for="linkedin">LinkedIn URL</label>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+              <input type="text" id="url" name="linkedin" placeholder="your linkedIn url" class="form-control">
+              <h4 id="err7" class="error"></h4>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+              <label for="skype">Address<span class="text-warning">*</span></label>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+              <textarea name="address" id="address" class="form-control" rows="2"
+                placeholder="your contacting address"></textarea>
+              <h4 id="err8" class="error"></h4>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+              <label for="Pin">Pin</label>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+              <input type="text" name="pin" placeholder="your city pincode" class="form-control">
+              <h4 id="err9" class="error"></h4>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-dark m-lg-5 submitbtn">Save & Continue</button>
+        </div>
+      </form>
+    </div>
+    <!-- End of form here/first tab -->
+
+    <!-- Second tab summary -->
+    <div id="SUMMARY" class="tabcontent">
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/plus-black-symbol.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Add
+            Summary</span>
+        </div>
+      </a>
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/cancel.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Skip
+            this
+            section</span>
+        </div>
+      </a>
+    </div>
+    <!-- End of summary tag -->
+    <!-- work tab -->
+    <div id="WORK" class="tabcontent">
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/plus-black-symbol.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Add
+            Employement details</span>
+        </div>
+      </a>
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/cancel.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Skip
+            this
+            section</span>
+        </div>
+      </a>
+    </div>
+    <!-- end of work tab here -->
+    <!-- educationv tab -->
+    <div id="EDUCATION" class="tabcontent">
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/plus-black-symbol.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Add
+            Academic details</span>
+        </div>
+      </a>
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/cancel.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Skip
+            this
+            section</span>
+        </div>
+      </a>
+    </div>
+    <!-- ends of education tab here -->
+    <!-- Skills tab -->
+    <div id="SKILLS" class="tabcontent">
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/plus-black-symbol.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Add
+            Skills</span>
+        </div>
+      </a>
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/cancel.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Skip
+            this
+            section</span>
+        </div>
+      </a>
+    </div>
+    <!-- ends of skills tab here -->
+    <!-- Certification tab -->
+    <div id="CERTIFICATIONS" class="tabcontent">
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/plus-black-symbol.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Add
+            Certifications</span>
+        </div>
+      </a>
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/cancel.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Skip
+            this
+            section</span>
+        </div>
+      </a>
+    </div>
+    <!-- end of certification tab -->
+    <!-- Honor and rewards tab -->
+    <div id="HONORS" class="tabcontent">
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/plus-black-symbol.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Add
+            Honor And Awards</span>
+        </div>
+      </a>
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/cancel.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Skip
+            this
+            section</span>
+        </div>
+      </a>
+    </div>
+    <!-- end of honor and rewards tab -->
+    <!-- project tab -->
+    <div id="PROJECTS" class="tabcontent">
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/plus-black-symbol.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Add
+            Research And Projects Details</span>
+        </div>
+      </a>
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/cancel.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Skip
+            this
+            section</span>
+        </div>
+      </a>
+    </div>
+    <!-- end of project tab here -->
+    <!-- training tabe -->
+    <div id="TRAININGS" class="tabcontent">
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/plus-black-symbol.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Add
+            Trainings</span>
+        </div>
+      </a>
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/cancel.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Skip
+            this
+            section</span>
+        </div>
+      </a>
+    </div>
+    <!-- end of training tab here -->
+    <!-- References tab -->
+    <div id="REFERENCES" class="tabcontent">
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/plus-black-symbol.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Add
+            References</span>
+        </div>
+      </a>
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/cancel.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Skip
+            this
+            section</span>
+        </div>
+      </a>
+    </div>
+    <!-- End of references tab here -->
+    <!-- additional  tab -->
+    <div id="ADDITIONAL" class="tabcontent">
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/plus-black-symbol.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Add
+            Personals details</span>
+        </div>
+      </a>
+      <a>
+        <div id="skip" class="container jumbotron text-center">
+          <img src="./build/img/cancel.png" height=30" width="30" class="img-fluid pr-3"><span
+            class="font-weight-bold">Skip
+            this
+            section</span>
+        </div>
+      </a>
+    </div>
+    <!-- end of addiotional tab here -->
+  </div>
+
+
+
+
+  <!-- function to open a related tab onclick -->
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+  </script>
+  <script src="build/js/intlTelInput.js"></script>
+  <script>
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+      utilsScript: "build/js/utils.js",
+    });
+  </script>
+  <!-- validation of the mandatory fields in form -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#err1').hide();
+      $('#err2').hide();
+      $('#err3').hide();
+      $('#err4').hide();
+      $('#err5').hide();
+      $('#err6').hide();
+      $('#err7').hide();
+      $('#err8').hide();
+      $('#err9').hide();
+      var fname_err = true;
+      var phone_err = true;
+      var lname_err = true;
+      var email_err = true;
+      var skype_err = true;
+      var pin_err = true;
+      var address_err = true;
+      var url_err = true;
+      $('#email').keyup(function () {
+        ValidateEmail(email);
+      });
+
+      function ValidateEmail(email) {
+        var email_val = $('#email').val();
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myform.email.value)) {
+          $('#err3').hide();
+          return (true);
+        }
+        else {
+          $('#err3').show();
+          $('#err3').html("**must be a valid email**");
+          $('#err3').focus();
+          $('#err3').css("color", "red");
+          email_err = false;
+          return false;
+        }
+      }
+      $('#fname').keyup(function () {
+        namecheck();
+      });
+      function namecheck() {
+        var fname_val = $('#fname').val();
+        if (fname_val.length == '') {
+          $('#err1').show();
+          $('#err1').html("**first name can't be empty**");
+          $('#err1').focus();
+          $('#err1').css("color", "red");
+          fname_err = false;
+          return false;
+        }
+        if (fname_val.length < 4) {
+          $('#err1').show();
+          $('#err1').html("**minimum 4 character is required**");
+          $('#err1').focus();
+          $('#err1').css("color", "red");
+          fname_err = false;
+          return false;
+        }
+        else {
+          $('#err1').hide();
+        }
+      }
+      $('#lname').keyup(function () {
+        namecheck2();
+      });
+      function namecheck2() {
+        var lname_val = $('#lname').val();
+        if (lname_val.length == '') {
+          $('#err2').show();
+          $('#err2').html("**last name can't be empty**");
+          $('#err2').focus();
+          $('#err2').css("color", "red");
+          lname_err = false;
+          return false;
+        }
+        if (lname_val.length < 2) {
+          $('#err2').show();
+          $('#err2').html("**minimum 2 character is required**");
+          $('#err2').focus();
+          $('#err2').css("color", "red");
+          lname_err = false;
+          return false;
+        }
+        else {
+          $('#err2').hide();
+        }
+      }
+
+      $('#phone').keyup(function () {
+        phone();
+      });
+      function phone() {
+        var phone_val = $('#phone').val();
+        if (phone_val.length == '') {
+          $('#err4').show();
+          $('#err4').html("**mobile number can't be empty**");
+          $('#err4').focus();
+          $('#err4').css("color", "red");
+          phone_err = false;
+          return false;
+        }
+        if (phone_val.length < 10) {
+          $('#err4').show();
+          $('#err4').html("**minimum 10 digit is required**");
+          $('#err4').focus();
+          $('#err4').css("color", "red");
+          phone_err = false;
+          return false;
+        }
+        else {
+          $('#err4').hide();
+        }
+      }
+      $('#address').keyup(function () {
+        address();
+      });
+      function address() {
+        var address_val = $('#address').val();
+        if (address_val.length == '') {
+          $('#err8').show();
+          $('#err8').html("**address can't be empty**");
+          $('#err8').focus();
+          $('#err8').css("color", "red");
+          address_err = false;
+          return false;
+        }
+        if (address_val.length < 5) {
+          $('#err8').show();
+          $('#err8').html("**must be a valid address**");
+          $('#err8').focus();
+          $('#err8').css("color", "red");
+          address_err = false;
+          return false;
+        }
+        else {
+          $('#err8').hide();
+        }
+      }
+
+      $('.submitbtn').click(function () {
+        email_err = true;
+        fname_err = true;
+        lname_err = true;
+        phone_err = true;
+        address_err = true;
+        ValidateEmail(email);
+        namecheck();
+        namecheck2();
+        phone();
+        address();
+        if ((fname_err == true) && (email_err == true) && (lname_err == true) && (phone_err == true) && (address_err == true)) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+    });
+
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#title1').hide();
+      $('#title').click(function (event) {
+        $('#title1').show();
+        $('#title').hide();
+
+      });
+      $('#save').click(function (event) {
+        $('#title').show();
+        $('#title1').hide();
+
+      });
+    });
+  </script>
+  <!-- validation ends here -->
+</body>
+
+</html>
