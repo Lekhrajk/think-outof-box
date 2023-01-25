@@ -5,7 +5,7 @@ Please Follow the following steps
 ## Step1: 
        Download the code as in zip or clone the repository in your desired folder of your PC/Laptop
 
-## Step4: 
+## Step2: 
 
       Done
 
